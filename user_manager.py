@@ -34,9 +34,11 @@ if __name__ == "__main__":
 
     print("end")
 
-user_deleted = user_manager.delete_user(17)
-user = user_manager.find_user(17)
-seconduser_deleted = user_manager.delete_user("2")
-seconduser = user_manager.find_user(2)
+#user_deleted = user_manager.delete_user(17)
+#user = user_manager.find_user(17)
+#>seconduser_deleted = user_manager.delete_user("2")
+#seconduser = user_manager.find_user(2)
+user = user_manager.get_all_names()
+
 
 print("end")

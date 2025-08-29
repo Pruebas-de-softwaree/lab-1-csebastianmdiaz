@@ -31,4 +31,6 @@ if __name__ == "__main__":
     for i in range(500):
         user_manager.add_user(i, f"Yo soy el num :{i}")
 
+        user = user_manager.find_user(100)
+
     print("end")

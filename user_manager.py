@@ -28,16 +28,18 @@ class UserManager:
 
 if __name__ == "__main__":
     user_manager = UserManager()
-    for i in range(500):
-        user_manager.add_user(i, f"Yo soy el num :{i}")
+    try:
+        for i in range(1000):
+            user_manager.add_user(i, f"Usuario {i}")
+        print("RNF1 - Se agregaron 1000 usuarios sin errores")
 
+        import time
+        start = time.time()
+        user_manager.find_user(500)
+        end = time.time()
+        print("Tiempo de búsqueda usuario 500:", end - start, "s")
 
-#user_deleted = user_manager.delete_user(17)
-#user = user_manager.find_user(17)
-#>seconduser_deleted = user_manager.delete_user("2")
-#seconduser = user_manager.find_user(2)
-#user = user_manager.get_all_names()
-user = user_manager.average_user_id()
-
+    except Exception as e:
+        print("Error durante la prueba de rendimiento:", e)
 
 print("end")

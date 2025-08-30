@@ -28,18 +28,18 @@ class UserManager:
 
 if __name__ == "__main__":
     user_manager = UserManager()
+
     try:
-        for i in range(1000):
-            user_manager.add_user(i, f"Usuario {i}")
-        print("RNF1 - Se agregaron 1000 usuarios sin errores")
-
-        import time
-        start = time.time()
-        user_manager.find_user(500)
-        end = time.time()
-        print("Tiempo de búsqueda usuario 500:", end - start, "s")
-
+        user_manager.delete_user(2000)
+        print("Eliminar usuario inexistente: OK")
     except Exception as e:
-        print("Error durante la prueba de rendimiento:", e)
+        print("Error al eliminar usuario inexistente:", e)
 
-print("end")
+    try:
+        vacio = UserManager()
+        promedio = vacio.average_user_id()
+        print("Promedio en lista vacía:", promedio)
+    except Exception as e:
+        print("Error al calcular promedio en lista vacía:", e)
+
+    print("end")

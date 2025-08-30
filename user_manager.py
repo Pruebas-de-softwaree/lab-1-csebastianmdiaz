@@ -29,17 +29,15 @@ class UserManager:
 if __name__ == "__main__":
     user_manager = UserManager()
 
-    try:
-        user_manager.delete_user(2000)
-        print("Eliminar usuario inexistente: OK")
-    except Exception as e:
-        print("Error al eliminar usuario inexistente:", e)
+    user_manager.add_user(1, "Alice")
+    user_manager.add_user(2, "Bob")
+    user_manager.add_user(1, "Charlie")
 
-    try:
-        vacio = UserManager()
-        promedio = vacio.average_user_id()
-        print("Promedio en lista vacía:", promedio)
-    except Exception as e:
-        print("Error al calcular promedio en lista vacía:", e)
+    print("Buscar ID 1:", user_manager.find_user(1))
+    print("Buscar ID 2:", user_manager.find_user(2))
 
+    user_manager.delete_user(2)
+    user_manager.delete_user(2000)
+
+    print("Usuarios restantes:", user_manager.get_all_names())
     print("end")
